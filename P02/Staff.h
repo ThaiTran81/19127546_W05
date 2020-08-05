@@ -93,6 +93,7 @@ public:
 	void PrintNVCongNhat();
 	void PrintNVQuanLy();
 	void PrintAllStaff();
+	void NhapDanhSach();
 };
 
 void Menu();

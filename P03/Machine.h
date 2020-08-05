@@ -61,6 +61,7 @@ public:
 	ChiTiet* TimChiTiet(string name) override;
 	void Menu();
 	void NhapChiTietMay();
+	~ChiTietPhuc();
 };
 #endif
 

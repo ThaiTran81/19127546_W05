@@ -1,4 +1,6 @@
 ﻿  Machine.cpp
 C:\Users\Tran Van Thuan\source\repos\19127546_W05\P03\Machine.cpp(47,26): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
 C:\Users\Tran Van Thuan\source\repos\19127546_W05\P03\Machine.cpp(50,24): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+  Main.cpp
+  Generating Code...
   P03.vcxproj -> C:\Users\Tran Van Thuan\source\repos\19127546_W05\Debug\P03.exe

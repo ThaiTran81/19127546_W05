@@ -11,7 +11,7 @@ int main()
 		cin >> choice;
 		if(choice ==1)
 		{
-			
+			company.NhapDanhSach();
 		}
 		else if(choice ==2)
 		{

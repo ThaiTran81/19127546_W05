@@ -138,11 +138,24 @@ void CTy::PrintAllStaff()
 	this->PrintNVQuanLy();
 }
 
+void CTy::NhapDanhSach()
+{
+	int choice;
+	cout << "Nhap danh sach nhan vien vien:";
+	do
+	{
+		this->AddNewStaff();
+		cout << "ban co muon nhan tiep khong?yes(1)/no(0) ";
+		cin >> choice;
+		if (choice) cin.ignore();
+	} while (choice != 0);
+}
+
 void Menu()
 {
 	system("cls");
 	cout << "    >>>>>>MENU<<<<<" << endl;
-	cout << "1. Import List of staffs" << endl;
+	cout << "1. Enter List of staffs" << endl;
 	cout << "2. Add a new staff" << endl;
 	cout << "3. Print list of all staffs in company" << endl;
 	cout << "4. Number of staff in company" << endl;

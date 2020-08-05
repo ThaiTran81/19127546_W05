@@ -4,7 +4,7 @@ void ChiTiet::GetInfo()
 {
 	cout << "Chi tiet [" << _id << "]" << endl;
 	cout << ">>Trong luong: " << _weight << "kg" << endl;
-	cout << "Gia thanh: " << _price << "vnd" << endl;
+	cout << ">>Gia thanh: " << _price << "vnd" << endl;
 }
 
 void ChiTietDon::Set()
@@ -159,4 +159,12 @@ void ChiTietPhuc::NhapChiTietMay()
 	}
 	while (choice!=0);
 	
+}
+
+ChiTietPhuc::~ChiTietPhuc()
+{
+	for(auto it:vt_chitiet)
+	{
+		delete it;
+	}
 }

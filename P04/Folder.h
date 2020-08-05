@@ -17,6 +17,7 @@ protected:
 public:
 	StorageUnit() :_name(""), _size(0), type("") {};
 	virtual void Set() = 0;
+	virtual  StorageUnit* findFolder(const string& name) = 0;
 	float GetSize()
 	{
 		return _size;
@@ -59,13 +60,16 @@ public:
 	};
 	void Set() override;
 	void Print() override;
+	StorageUnit*findFolder(const string& name) override
+	{
+		return NULL;
+	}
 };
 
 class Folder :public StorageUnit
 {
 private:
 	vector<StorageUnit*>vt_folder;
-	static vector<StorageUnit*>s_vt_folder;
 	int _numfile = 0;
 	int _numfolder = 0;
 public:
@@ -86,7 +90,8 @@ public:
 	{
 		return _numfolder;
 	}
-	StorageUnit* findFolder(const string& name);
+	StorageUnit*findFolder(const string& name) override;
+	~Folder();
 };
 #endif
 

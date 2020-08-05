@@ -1,6 +1,5 @@
 #include "Folder.h"
 
-vector<StorageUnit*>Folder::s_vt_folder;
 void File::Set()
 {
 	cout << "Nhap ten file(ex1.txt....):";
@@ -71,7 +70,6 @@ void Folder::AddFolder()
 	newfolder->Set();
 	_size += newfolder->GetSize();
 	vt_folder.push_back(newfolder);
-	s_vt_folder.push_back(newfolder);
 	_numfolder++;
 }
 
@@ -149,12 +147,21 @@ void Folder::Option()
 StorageUnit* Folder::findFolder(const string& name)
 {
 	if (name == _name) return this;
-	for (auto it : s_vt_folder/*= s_vt_folder.begin(); it != s_vt_folder.end(); it++*/)
+	for (auto it : vt_folder)
 	{
-		if ((it)->GetName() == name)
+		StorageUnit* p = (it)->findFolder(name);
+		if ( p!= NULL)
 		{
-			return (it);
+			return (p);
 		}
 	}
 	return NULL;
+}
+
+Folder::~Folder()
+{
+	for (auto it:vt_folder)
+	{
+		delete it;
+	}
 }
